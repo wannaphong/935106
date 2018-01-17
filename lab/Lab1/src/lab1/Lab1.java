@@ -5,6 +5,8 @@
  */
 package lab1;
 
+import java.util.Scanner;
+
 /**
  *
  * @author wannaphong
@@ -17,11 +19,18 @@ public class Lab1 {
     public static void main(String[] args) {
        /* System.out.println("Hello World !!"); // แสดงผลและขึ้นบรรทัดใหม่
         System.out.print("Hello World !!");*/
-       System.out.print("ชื่อ นายวรรณพงษ์  ภัททิยไพบูลย์  ชื่อเล่น ต้นตาล สาขา CIS\n" +
+       /*System.out.print("ชื่อ นายวรรณพงษ์  ภัททิยไพบูลย์  ชื่อเล่น ต้นตาล สาขา CIS\n" +
 "พี่รหัสชื่อ นางสาวชลรัตน์ มาทา ชื่อ พี่อ้อย\n" +
 "ลุงรหัสชื่อ นายธีรพัฒน์ เทศชารี ชื่อ ลุงต้น\n" +
 "ป้ารหัสชื่อ นางสาวบุปผา มณีแสง ชื่อ ป้ามิ้ม\n" +
-"ปูรหัสชื่อ นายองอาจ คำจันทร์ ชื่อ ปูนาน");
+"ปู่รหัสชื่อ นายองอาจ คำจันทร์ ชื่อ ปู่นาน");*/
+       System.out.print("Input num1 : ");
+       Scanner scan = new Scanner(System.in);
+       String num1 = scan.nextLine();
+       System.out.print("Input num2 : ");
+       //scan = new Scanner(System.in);
+       String num2 = scan.nextLine();
+       System.out.println(num1+"+"+num2+"="+(Integer.valueOf(num1)+Integer.valueOf(num2)));
     }
     
 }
