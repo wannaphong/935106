@@ -10,9 +10,9 @@ namespace week1
     {
         public string name;
         public string nickname;
-        public string b;
-        public string[] p_code;
-        public string[] n_code;
-        public string y;
+        public string program;
+        public string[] younger_person;
+        public string[] elder_person;
+        public string year;
     }
 }
