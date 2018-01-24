@@ -16,9 +16,11 @@ public class Lab2Class {
      */
     public static void main(String[] args) {
         Profile pf = new Profile();
-        String profilename=pf.getName();
+        System.out.println();
+        /*String profilename=pf.getName();
         System.out.println(profilename);
-        pf.getID("603410214-3","1");
+        pf.getID("603410214-3","1");*/
+        new Profile("Ok","1");
     }
     
 }

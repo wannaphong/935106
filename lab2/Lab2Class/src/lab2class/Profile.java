@@ -21,12 +21,12 @@ public class Profile {
         System.out.println("Student ID is "+stu_id);
         System.out.println("My name is "+Name);
     }
-    public String getName(){
+    /*public String getName(){
         return name;
     }
     public void getID(String stu_id,String major){
         /*System.out.println(id);
-        System.out.println("So What ?");*/
+        System.out.println("So What ?");
         System.out.println(stu_id+" "+major);
-    }
+    }*/
 }
