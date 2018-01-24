@@ -10,7 +10,7 @@ package lab2class;
  * @author wannaphong
  */
 public class Profile {
-    String name="Wannaphong",id="603410214-3";
+    String name="Wannaphong",id="603410214-3",nickname="Tontan";
     public Profile() { // constructor formed 1
         //System.out.println("ssssssss");
         String stu_id=id,Name=name;
@@ -21,12 +21,13 @@ public class Profile {
         System.out.println("Student ID is "+stu_id);
         System.out.println("My name is "+Name);
     }
-    /*public String getName(){
-        return name;
+    public String getName(){
+        String nickname="Tontan";
+        return nickname;
     }
     public void getID(String stu_id,String major){
-        /*System.out.println(id);
+        System.out.println(id);
         System.out.println("So What ?");
         System.out.println(stu_id+" "+major);
-    }*/
+    }
 }

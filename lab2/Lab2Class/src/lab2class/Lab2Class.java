@@ -15,12 +15,13 @@ public class Lab2Class {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Profile pf = new Profile();
-        System.out.println();
-        /*String profilename=pf.getName();
+        new Profile();
+        Profile pf = new Profile("603410214-3","Wannaphong");
+        //System.out.println();
+        String profilename=pf.getName();
         System.out.println(profilename);
-        pf.getID("603410214-3","1");*/
-        new Profile("Ok","1");
+        pf.getID("603410214-3","CIS");
+        //new Profile("Ok","1");
     }
     
 }
