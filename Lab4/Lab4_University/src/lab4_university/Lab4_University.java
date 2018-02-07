@@ -15,9 +15,8 @@ public class Lab4_University {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
         Academic acd=new Academic("Folk",23,"OOP");
-        acd.introduce();
+        acd.teachSubject();
     }
     
 }

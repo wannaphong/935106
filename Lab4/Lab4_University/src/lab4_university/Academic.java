@@ -15,12 +15,13 @@ public class Academic extends staff {
        
    }
    public Academic(String name,int age,String subject){
-       super(name,age);
+       super(name,age);// ไม่สามารถใส่น้อยกว่าหรือมากกว่าตัวแปรที่อยู่ใน super-class ได้ ส่งไปให้ class พ่อแม่ แบบ confssde
        /*this.name=name;
        this.age=age;*/
        this.subject=subject;
    }
    public void teachSubject(){
+       super.introduce();
        System.out.println("teach : "+subject);
    }
 }
