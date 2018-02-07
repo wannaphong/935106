@@ -15,8 +15,12 @@ public class Academic extends staff {
        
    }
    public Academic(String name,int age,String subject){
-       this.name=name;
-       this.age=age;
+       super(name,age);
+       /*this.name=name;
+       this.age=age;*/
        this.subject=subject;
+   }
+   public void teachSubject(){
+       System.out.println("teach : "+subject);
    }
 }

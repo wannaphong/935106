@@ -16,7 +16,7 @@ public class Lab4_University {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Academic acd=new Academic();//("Wannaphong",4,"");
+        Academic acd=new Academic("Folk",23,"OOP");
         acd.introduce();
     }
     
