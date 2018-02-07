@@ -10,5 +10,13 @@ package lab4_university;
  * @author wannaphong
  */
 public class Academic extends staff {
-   
+   String subject;
+   public Academic(){
+       
+   }
+   public Academic(String name,int age,String subject){
+       this.name=name;
+       this.age=age;
+       this.subject=subject;
+   }
 }
