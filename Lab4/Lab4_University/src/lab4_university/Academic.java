@@ -9,6 +9,6 @@ package lab4_university;
  *
  * @author wannaphong
  */
-public class Academic {
-    
+public class Academic extends staff {
+   
 }

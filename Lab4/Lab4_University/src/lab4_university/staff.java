@@ -9,14 +9,14 @@ package lab4_university;
  *
  * @author wannaphong
  */
-public class Staff {
+public class staff {
     String name;
     int age;
     
-    public Staff(){
+    public staff(){
         
     }
-    public Staff(String name,int age){
+    public staff(String name,int age){
         this.name=name;
         this.age=age;
     }
