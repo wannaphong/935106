@@ -21,6 +21,7 @@ public class Staff {
         this.age=age;
     }
     public void introduce(){
-        
+        System.out.println("My name is "+name);
+        System.out.println("I'm "+age+" years old");
     }
 }
