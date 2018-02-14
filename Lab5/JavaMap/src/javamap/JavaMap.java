@@ -5,6 +5,9 @@
  */
 package javamap;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author wannaphong
@@ -15,7 +18,13 @@ public class JavaMap {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Map students = new HashMap();
+        students.put("Ta", "4.00");
+        students.put("Mo", "3.57");
+        students.put("na", "2.59");
+        System.out.println(students.get("Mo"));
+        
+        Map<String,String> staff=new HashMap();
     }
     
 }
