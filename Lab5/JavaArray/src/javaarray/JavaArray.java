@@ -15,7 +15,7 @@ public class JavaArray {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        String array_name="air,got,aun,kie,fern";
     }
     
 }
