@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaarray;
+package lab5_603410214.pkg3;
+
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -22,15 +23,10 @@ public class ArrayClass {
             text[i] = scan.nextLine();
             this.arrayList.add(text[i]);
         }
-        System.out.println("Show List ? Yes,No");
-        String t = scan.nextLine();
-        if(t.equals("Yes")){
-            ShowArrayList();
-        }
     }
     public void ShowArrayList(){
         for(int i=0;i<arrayList.size();i++){
-            System.out.println("ลำดับที่ "+(i+1)+" = "+arrayList.get(i));
+            System.out.println(arrayList.get(i));
         }
     }
 }
