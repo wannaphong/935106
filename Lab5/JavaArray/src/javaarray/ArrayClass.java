@@ -13,4 +13,7 @@ import java.util.ArrayList;
  */
 public class ArrayClass {
     ArrayList<String> arryList = new ArrayList<>();
+    public void AddArrayList(String[] text){
+        
+    }
 }
