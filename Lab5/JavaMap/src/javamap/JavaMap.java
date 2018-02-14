@@ -22,6 +22,7 @@ public class JavaMap {
         students.put("Ta", "4.00");
         students.put("Mo", "3.57");
         students.put("na", "2.59");
+        System.out.println(students);
         System.out.println(students.get("Mo"));
         
         Map<String,String> staff=new HashMap();
