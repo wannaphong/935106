@@ -5,10 +5,12 @@
  */
 package javaarray;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author wannaphong
  */
 public class ArrayClass {
-    
+    ArrayList<String> arryList = new ArrayList<>();
 }
