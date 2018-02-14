@@ -12,10 +12,15 @@ import java.util.ArrayList;
  * @author wannaphong
  */
 public class ArrayClass {
-    ArrayList<String> arryList = new ArrayList<>();
+    ArrayList<String> arrayList = new ArrayList<>();
     public void AddArrayList(String[] text){
         for(int i=0;i<text.length;i++){
-            this.arryList.add(text[i]);
+            this.arrayList.add(text[i]);
+        }
+    }
+    public void ShowArrayList(){
+        for(int i=0;i<arrayList.size();i++){
+            System.out.println(arrayList.get(i));
         }
     }
 }
