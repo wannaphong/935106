@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ass04_603410214.pkg3;
 
 /**
@@ -10,16 +5,11 @@ package ass04_603410214.pkg3;
  * @author wannaphong
  */
 public class ASS04_6034102143 {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
-        SportCar honda = new SportCar();
-        honda.run();
-        SportCar toyota=new SportCar("toyota",2,10,2);
-        toyota.run();
+        Car car = new Car(); // เรียกใช้ class Car เป็นวัตถุ honda
+        car.run(); // แสดงการวิ่งของรถ
+        System.out.println(); // เว้นบรรทัด
+        SuperCar honda=new SuperCar("honda",2,10,2); // เรียกใช้ class SuperCar ประกาศไว้ในตัวแปร honda โดยมีคุณสมบัติตามโจทย์ v=2,gass=10,gassUseRate=2
+        honda.run();// แสดงการวิ่งของรถ
     }
-    
 }
