@@ -5,10 +5,10 @@ package ass04_603410214.pkg3;
  * @author wannaphong
  */
 public class Car { // ประกาศ class ชื่อ Car
-    public String name; // ชื่อรถ
-    public int gass; // ปริมาณน้ำมัน
-    public int gassUsedRate; // อัตราการใช้น้ำมัน
-    public int v; // ความเร็วรถ
+    String name; // ชื่อรถ
+    int gass; // ปริมาณน้ำมัน
+    int gassUsedRate; // อัตราการใช้น้ำมัน
+    int v; // ความเร็วรถ
     private int time; // เวลา
     public Car(){ //constructer
         this.name="car"; // กำหนดชื่อรถว่า honda
