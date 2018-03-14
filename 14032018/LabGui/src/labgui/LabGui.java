@@ -5,6 +5,8 @@
  */
 package labgui;
 
+import java.awt.Color;
+
 /**
  *
  * @author wannaphong
@@ -18,7 +20,8 @@ public class LabGui {
         // TODO code application logic here
         Test t = new Test();
         t.setTitle("Hi");
-        t.show();
+        t.setBackground(Color.yellow);
+        t.setVisible(true);
     }
     
 }
