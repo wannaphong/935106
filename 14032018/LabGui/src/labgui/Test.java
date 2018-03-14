@@ -94,7 +94,8 @@ public class Test extends javax.swing.JFrame {
 
     private void btn_showActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_showActionPerformed
         // TODO add your handling code here:
-        lb_showdata.setText(txt_firstname.getText()+" "+txt_lastname.getText());
+        //lb_showdata.setText(txt_firstname.getText()+" "+txt_lastname.getText());
+        lb_showdata.setText(txt_firstname.getText().concat(txt_lastname.getText()));
     }//GEN-LAST:event_btn_showActionPerformed
 
     /**
