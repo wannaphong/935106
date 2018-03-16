@@ -35,8 +35,12 @@ public class Cal extends javax.swing.JFrame {
         txt_show = new javax.swing.JTextField();
         btn_e = new javax.swing.JButton();
         btn_p = new javax.swing.JButton();
+        btn_m = new javax.swing.JButton();
+        btn_twoe = new javax.swing.JButton();
+        btn_mod = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Cal");
 
         jLabel1.setText("Result");
 
@@ -44,9 +48,42 @@ public class Cal extends javax.swing.JFrame {
 
         jLabel3.setText("Input 2");
 
+        txt_show.setEnabled(false);
+
         btn_e.setText("-");
+        btn_e.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_eActionPerformed(evt);
+            }
+        });
 
         btn_p.setText("+");
+        btn_p.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_pActionPerformed(evt);
+            }
+        });
+
+        btn_m.setText("*");
+        btn_m.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_mActionPerformed(evt);
+            }
+        });
+
+        btn_twoe.setText("/");
+        btn_twoe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_twoeActionPerformed(evt);
+            }
+        });
+
+        btn_mod.setText("%");
+        btn_mod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_modActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -56,7 +93,11 @@ public class Cal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_e, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btn_p, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(btn_e, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(btn_m, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(58, 58, 58)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -67,17 +108,16 @@ public class Cal extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel2))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txt_num1)
                             .addComponent(txt_num2)
                             .addComponent(txt_show, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(179, 179, 179))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(130, 130, 130)
-                    .addComponent(btn_p, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(272, Short.MAX_VALUE)))
+                .addGap(28, 28, 28)
+                .addComponent(btn_twoe, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btn_mod, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,18 +134,53 @@ public class Cal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txt_num2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addComponent(btn_e, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(192, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_e, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_m, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_p, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(40, 40, 40)))
+                    .addComponent(btn_twoe, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_mod, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_pActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pActionPerformed
+        // TODO add your handling code here:
+        int num1 = Integer.parseInt(txt_num1.getText());
+        int num2 = Integer.parseInt(txt_num2.getText());
+        txt_show.setText(String.valueOf(num1+num2));
+    }//GEN-LAST:event_btn_pActionPerformed
+
+    private void btn_eActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eActionPerformed
+        // TODO add your handling code here:
+        int num1 = Integer.parseInt(txt_num1.getText());
+        int num2 = Integer.parseInt(txt_num2.getText());
+        txt_show.setText(String.valueOf(num1-num2));
+    }//GEN-LAST:event_btn_eActionPerformed
+
+    private void btn_mActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mActionPerformed
+        // TODO add your handling code here:
+        int num1 = Integer.parseInt(txt_num1.getText());
+        int num2 = Integer.parseInt(txt_num2.getText());
+        txt_show.setText(String.valueOf(num1*num2));
+    }//GEN-LAST:event_btn_mActionPerformed
+
+    private void btn_twoeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_twoeActionPerformed
+        // TODO add your handling code here:
+        double num1 = Double.parseDouble(txt_num1.getText());
+        double num2 = Double.parseDouble(txt_num2.getText());
+        txt_show.setText(String.valueOf(num1/num2));
+    }//GEN-LAST:event_btn_twoeActionPerformed
+
+    private void btn_modActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modActionPerformed
+        // TODO add your handling code here:
+        int num1 = Integer.parseInt(txt_num1.getText());
+        int num2 = Integer.parseInt(txt_num2.getText());
+        txt_show.setText(String.valueOf(num1%num2));
+    }//GEN-LAST:event_btn_modActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,7 +219,10 @@ public class Cal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_e;
+    private javax.swing.JButton btn_m;
+    private javax.swing.JButton btn_mod;
     private javax.swing.JButton btn_p;
+    private javax.swing.JButton btn_twoe;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

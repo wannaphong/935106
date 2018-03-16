@@ -16,6 +16,8 @@ public class Lab16032018 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Cal cal = new Cal();
+        cal.setVisible(true);
     }
     
 }
