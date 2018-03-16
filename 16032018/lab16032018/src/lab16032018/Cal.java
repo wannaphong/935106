@@ -5,6 +5,8 @@
  */
 package lab16032018;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author wannaphong
@@ -148,38 +150,60 @@ public class Cal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_pActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pActionPerformed
-        // TODO add your handling code here:
-        int num1 = Integer.parseInt(txt_num1.getText());
-        int num2 = Integer.parseInt(txt_num2.getText());
-        txt_show.setText(String.valueOf(num1+num2));
+        try{
+            double num1 = Double.parseDouble(txt_num1.getText());
+            double num2 = Double.parseDouble(txt_num2.getText());
+            txt_show.setText(String.valueOf(num1+num2));
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Input number","Input Error",JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_btn_pActionPerformed
 
     private void btn_eActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eActionPerformed
-        // TODO add your handling code here:
-        int num1 = Integer.parseInt(txt_num1.getText());
-        int num2 = Integer.parseInt(txt_num2.getText());
+        try{
+        /*int num1 = Integer.parseInt(txt_num1.getText());
+        int num2 = Integer.parseInt(txt_num2.getText());*/
+        double num1 = Double.parseDouble(txt_num1.getText());
+        double num2 = Double.parseDouble(txt_num2.getText());
         txt_show.setText(String.valueOf(num1-num2));
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Input number","Input Error",JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_btn_eActionPerformed
 
     private void btn_mActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mActionPerformed
-        // TODO add your handling code here:
-        int num1 = Integer.parseInt(txt_num1.getText());
-        int num2 = Integer.parseInt(txt_num2.getText());
+        try{
+        double num1 = Double.parseDouble(txt_num1.getText());
+        double num2 = Double.parseDouble(txt_num2.getText());
         txt_show.setText(String.valueOf(num1*num2));
+         }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Input number","Input Error",JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_btn_mActionPerformed
 
     private void btn_twoeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_twoeActionPerformed
-        // TODO add your handling code here:
+        try{
         double num1 = Double.parseDouble(txt_num1.getText());
         double num2 = Double.parseDouble(txt_num2.getText());
         txt_show.setText(String.valueOf(num1/num2));
+         }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Input number","Input Error",JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_btn_twoeActionPerformed
 
     private void btn_modActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modActionPerformed
-        // TODO add your handling code here:
-        int num1 = Integer.parseInt(txt_num1.getText());
-        int num2 = Integer.parseInt(txt_num2.getText());
+        try{
+        double num1 = Double.parseDouble(txt_num1.getText());
+        double num2 = Double.parseDouble(txt_num2.getText());
         txt_show.setText(String.valueOf(num1%num2));
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Input number","Input Error",JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_btn_modActionPerformed
 
     /**
