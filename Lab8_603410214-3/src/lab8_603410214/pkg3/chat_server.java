@@ -10,8 +10,11 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.text.BreakIterator;
+import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.*;
 
 /**
  *
@@ -45,13 +48,20 @@ public class chat_server extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Server");
+        setTitle("ChatBot");
+
+        jTextField1.setEnabled(false);
 
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
         jTextArea1.setRows(5);
+        jTextArea1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextArea1.setEnabled(false);
         jScrollPane1.setViewportView(jTextArea1);
 
         jButton1.setText("send");
+        jButton1.setDoubleBuffered(true);
+        jButton1.setEnabled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -100,6 +110,106 @@ public class chat_server extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    public static ArrayList<String> icu_word_segmentation(String txt){
+        /**
+         * ตัวตัดภาษาไทย โดยใช้ IBM ICU
+         */
+        Locale thaiLocale = new Locale("th");
+        BreakIterator boundary = BreakIterator.getWordInstance(thaiLocale);
+        boundary.setText(txt);
+        StringBuffer strout = new StringBuffer();
+        ArrayList<String> al = new ArrayList<String>();
+        int start = boundary.first();
+        for (int end = boundary.next();
+            end != BreakIterator.DONE;
+            start = end, end = boundary.next()) {
+            al.add(txt.substring(start, end));
+        }
+        return al;
+    }
+    
+    public static String chatbot(String txt){
+        /*
+        ส่วนสำหรับกำหนดการโต้ตอบของ ChatBot
+        */
+        Random rand = new Random(); 
+        String data="";
+        txt=txt.toUpperCase();
+        ArrayList<String> text=icu_word_segmentation(txt);
+        if(text.contains("สวัสดี") || (text.contains("หวัด")&&text.contains("ดี"))||(text.contains("จ้า")&&text.contains("ดี"))||text.contains("HI")||text.contains("HELLO")){
+            String[] hi={"ดีจ้า","สวัสดีค่ะ","ว่าไง","จ้า","หวัดดีค่ะ"};
+            int value =rand.nextInt(hi.length);
+            data=hi[value];
+        }
+        else if(text.contains("ร้องเพลง")){
+            data="ลา..มะลิลา...\nขึ้นต้นเป็นมะลิซ้อน\nพอแตกใบอ่อนเป็นมะลิลา ^^";
+        }
+        else if(text.contains("เวลา")||(text.contains("วัน")&&text.contains("นี้"))){
+            Calendar c = Calendar.getInstance();
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            data="วันเวลาปัจจุบันนี้คือ "+df.format(c.getTime());
+        }
+        else if(text.contains("แปลง")&&text.contains("USD")&&text.contains("THB")){
+            double i=0,thb=0,usd=0,num=-1;
+            for(int j=0;j<text.size();j++){
+                if(text.get(j).equals("USD")){
+                    usd=j;
+                }
+                else if(text.get(j).equals("THB")){
+                    thb=j;
+                }
+                else{
+                    try{
+                        Double.parseDouble(text.get(j));
+                        num=Double.parseDouble(text.get(j));
+                    }
+                    catch(Exception e){
+                    }
+                }
+            }
+            if(usd<thb && num!=-1){
+                data="แปลงจาก "+String.valueOf(num)+" USD ได้เป็น "+String.valueOf(num*30)+" THB ได้ ";
+            }
+            else if(usd>thb && num!=-1){
+                data="แปลงจาก "+String.valueOf(num)+" THB ได้เป็น "+String.valueOf(num/30)+" USD ได้ ";
+            }
+            else{
+                data="ขออภัยค่ะ คุณไม่ได้กำหนดจำนวนมาค่ะ";
+            }
+        }
+        else if(text.contains("ฐาน")&&text.contains("สอง")&&text.contains("สิบ")){
+            int i=0,two=0,ten=0,num=-1;
+            for(int j=0;j<text.size();j++){
+                if(text.get(j).equals("สอง")){
+                    two=j;
+                }
+                else if(text.get(j).equals("สิบ")){
+                    ten=j;
+                }
+                else{
+                    try{
+                        Integer.parseInt(text.get(j));
+                        num=Integer.parseInt(text.get(j));
+                    }
+                    catch(Exception e){
+                    }
+                }
+            }
+            if(two<ten && num!=-1){
+                data="แปลงจาก "+String.valueOf(num)+" ฐานสอง เป็น ฐานสิบ ได้ "+String.valueOf(Integer.parseInt(String.valueOf(num), 2));
+            }
+            else if(two>ten && num!=-1){
+                data="แปลงจาก "+String.valueOf(num)+" ฐานสิบ เป็น ฐานสอง ได้ "+String.valueOf(Integer.toBinaryString(num));
+            }
+            else{
+                data="ขออภัยค่ะ คุณไม่ได้กำหนดเลขมาค่ะ";
+            }
+        }
+        else{
+            data="ขออภัย ข้อความนี้ไม่อยู่ในคำสั่งที่รองรับค่ะ TT";
+        }
+        return data;
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -125,6 +235,7 @@ public class chat_server extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        chat_server cs = new chat_server();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new chat_server().setVisible(true);
@@ -140,6 +251,10 @@ public class chat_server extends javax.swing.JFrame {
             while(!msg.equals("exit")){
                 msg=din.readUTF().toString();
                 jTextArea1.setText(jTextArea1.getText()+"Client: "+msg+"\n");
+                String chatbot_meg = chatbot(msg);
+                System.out.print(chatbot_meg.toString());
+                dout.writeUTF(chatbot_meg);
+                jTextArea1.setText(jTextArea1.getText()+"ChatBot: "+chatbot_meg+"\n");
             }
         } catch (Exception ex) {}
     }

@@ -43,7 +43,9 @@ public class chat_client extends javax.swing.JFrame {
         setTitle("Client");
 
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
         jTextArea1.setRows(5);
+        jTextArea1.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(jTextArea1);
 
         jButton1.setText("sent");
@@ -87,7 +89,7 @@ public class chat_client extends javax.swing.JFrame {
         try{
             String magout=jTextField1.getText();
             dout.writeUTF(magout);
-            jTextArea1.setText(jTextArea1.getText()+"Client: "+magout+"\n");
+            jTextArea1.setText(jTextArea1.getText()+"คุณ: "+magout+"\n");
         }
         catch(Exception e){}
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -132,7 +134,7 @@ public class chat_client extends javax.swing.JFrame {
             String msg="";
             while(!msg.equals("exit")){
                 msg=din.readUTF().toString();
-                jTextArea1.setText(jTextArea1.getText().trim()+"\nServer: "+msg+"\n");
+                jTextArea1.setText(jTextArea1.getText().trim()+"\nChatBot: "+msg+"\n");
             }
         }catch(Exception ex) {
             
