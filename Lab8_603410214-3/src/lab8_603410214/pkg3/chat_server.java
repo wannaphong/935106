@@ -45,6 +45,7 @@ public class chat_server extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Server");
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -91,6 +92,7 @@ public class chat_server extends javax.swing.JFrame {
         try{
             String magout=jTextField1.getText();
             dout.writeUTF(magout);
+            jTextArea1.setText(jTextArea1.getText()+"Server: "+magout+"\n");
         }
         catch(Exception e){}
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -135,8 +137,10 @@ public class chat_server extends javax.swing.JFrame {
             din = new DataInputStream(s.getInputStream());
             dout = new DataOutputStream(s.getOutputStream());
             String msg="";
-            msg=din.readUTF().toString();
-            jTextArea1.setText("Client: "+msg);
+            while(!msg.equals("exit")){
+                msg=din.readUTF().toString();
+                jTextArea1.setText(jTextArea1.getText()+"Client: "+msg+"\n");
+            }
         } catch (Exception ex) {}
     }
 
