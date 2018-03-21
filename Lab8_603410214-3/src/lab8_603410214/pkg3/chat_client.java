@@ -5,6 +5,10 @@
  */
 package lab8_603410214.pkg3;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.net.Socket;
+
 /**
  *
  * @author wannaphong
@@ -14,6 +18,9 @@ public class chat_client extends javax.swing.JFrame {
     /**
      * Creates new form chat_client
      */
+    static Socket s;
+    static DataInputStream din; // ส่งค่าเข้าเชิฟ
+    static DataOutputStream dout; // ส่งค่าออกจากเชิฟ
     public chat_client() {
         initComponents();
     }
@@ -38,7 +45,7 @@ public class chat_client extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jButton1.setText("jButton1");
+        jButton1.setText("sent");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -102,6 +109,16 @@ public class chat_client extends javax.swing.JFrame {
                 new chat_client().setVisible(true);
             }
         });
+        try {
+            s = new Socket("127.0.0.1",8081);
+            din = new DataInputStream(s.getInputStream());
+            dout = new DataOutputStream(s.getOutputStream());
+            String msg="";
+            msg=din.readUTF().toString();
+            jTextArea1.setText("Server: "+msg);
+        }catch(Exception ex) {
+            
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

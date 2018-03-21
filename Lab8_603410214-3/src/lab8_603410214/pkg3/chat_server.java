@@ -137,9 +137,7 @@ public class chat_server extends javax.swing.JFrame {
             String msg="";
             msg=din.readUTF().toString();
             jTextArea1.setText("Client: "+msg);
-        } catch (IOException ex) {
-            Logger.getLogger(chat_server.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } catch (Exception ex) {}
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
