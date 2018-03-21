@@ -168,10 +168,10 @@ public class chat_server extends javax.swing.JFrame {
                 }
             }
             if(usd<thb && num!=-1){
-                data="แปลงจาก "+String.valueOf(num)+" USD ได้เป็น "+String.valueOf(num*30)+" THB ได้ ";
+                data="แปลงจาก "+String.valueOf(num)+" USD ได้เป็น "+String.valueOf(num*30)+" THB";
             }
             else if(usd>thb && num!=-1){
-                data="แปลงจาก "+String.valueOf(num)+" THB ได้เป็น "+String.valueOf(num/30)+" USD ได้ ";
+                data="แปลงจาก "+String.valueOf(num)+" THB ได้เป็น "+String.valueOf(num/30)+" USD";
             }
             else{
                 data="ขออภัยค่ะ คุณไม่ได้กำหนดจำนวนมาค่ะ";
