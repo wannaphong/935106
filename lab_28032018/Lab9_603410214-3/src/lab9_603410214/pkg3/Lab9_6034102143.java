@@ -3,18 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package library;
+package lab9_603410214.pkg3;
 
 /**
  *
  * @author wannaphong
  */
-public class Library {
-    private int sum;
-    public void setPlus(int i , int j){
-        this.sum=i+j;
+public class Lab9_6034102143 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
     }
-    public int getPlus(){
-        return sum;
-    }
+    
 }
