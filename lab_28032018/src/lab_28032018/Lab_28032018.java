@@ -5,6 +5,10 @@
  */
 package lab_28032018;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author wannaphong
@@ -16,6 +20,12 @@ public class Lab_28032018 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        SQLiteTest sql = new SQLiteTest();
+        try {
+            sql.addUser("วรรณพงษ์", "ภัททิยไพบูลย์");
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(Lab_28032018.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }
