@@ -82,9 +82,9 @@ public class Calculator extends javax.swing.JFrame {
 
     private void btn_calActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_calActionPerformed
         // TODO add your handling code here:
-        Library s = new Library();
-        s.setPlus(Integer.parseInt(cal1.getText().toString()),Integer.parseInt(cal2.getText().toString()));
-        lab_ans.setText(String.valueOf(s.getPlus()));
+        Library library  = new Library();
+        library.setPlus(Integer.parseInt(cal1.getText().toString()),Integer.parseInt(cal2.getText().toString()));
+        lab_ans.setText(String.valueOf(library.getPlus()));
     }//GEN-LAST:event_btn_calActionPerformed
 
     /**
