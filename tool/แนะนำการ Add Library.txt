@@ -1,0 +1,1 @@
+แตกไฟล์ Zip แล้วทำการ Add Libraries เข้าไปใน JavaApplication ที่เราสร้างขึ้นคลิกขาวที่ Folder ชื่อ Libraries เลือก Add JAR/Folder.. แล้วค้นหาไดฟ์ที่เราแตกไฟล์ไว้และคลิก open ทำการ Add Libraries เสร็จสมบรูณ์

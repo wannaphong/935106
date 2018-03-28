@@ -124,7 +124,9 @@ public class chat_client extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new chat_client().setVisible(true);
+               chat_client a = new chat_client();
+               a.setTitle("ss");
+               a.setVisible(true);
             }
         });
         try {

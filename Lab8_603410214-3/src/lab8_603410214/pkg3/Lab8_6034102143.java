@@ -39,9 +39,9 @@ public class Lab8_6034102143 {
     
     public static void main(String[] args) {
         // TODO code application logic here
-     /*   Lab8_6034102143 lab = new Lab8_6034102143();
-        ArrayList<String> t= lab.icu_word_segmentation("ฐานสองเป็นสิบ");
-      System.out.println(String.valueOf(t));*/
+        Lab8_6034102143 lab = new Lab8_6034102143();
+        ArrayList<String> t= lab.icu_word_segmentation("ตอนนี้เวลาเท่าไหร่");
+      System.out.println(String.valueOf(t));
     }
     
     
